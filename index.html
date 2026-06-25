@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RapidHMI: Start integration testing before the hardware is ready</title>
-  <meta name="description" content="RapidHMI turns your protocol definitions into a working mock Human Machine Interface (HMI), so engineering teams can test data flows and catch mapping problems early, and reuse one platform across projects instead of rebuilding throwaway tools each time." />
+  <meta name="description" content="RapidHMI helps you build a mock Human Machine Interface (HMI) from an Interface Control Document (ICD). Configure an interactive representation of the target interface and begin integration testing before the physical hardware or production HMI is available." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -41,24 +41,23 @@
           <span class="eyebrow">For systems integration, test, and software engineering teams</span>
           <h1>Start integration testing before the hardware is ready.</h1>
           <p class="lede">
-            RapidHMI turns your protocol definitions into a working mock
-            <em>Human Machine Interface (HMI)</em>, the screen an operator
-            uses to monitor a system. Feed it real or test data to check your data
-            flows and catch mapping errors early, instead of waiting on the
-            hardware, the lab, or the final HMI.
+            RapidHMI turns an <em>Interface Control Document (ICD)</em> into a working mock
+            <em>Human Machine Interface (HMI)</em>. Configure an interactive representation
+            of the target interface and begin integration testing before the physical
+            hardware or production HMI is available.
           </p>
           <ul class="hero-bullets">
-            <li>Test as soon as the message definitions exist</li>
-            <li>Catch mapping faults while they are cheap to fix</li>
-            <li>Reuse one setup across projects, not a new throwaway tool each time</li>
+            <li>Start integration before hardware is available</li>
+            <li>Catch mapping faults early, while they're cheap to fix</li>
+            <li>Reuse one platform across projects</li>
           </ul>
           <div class="hero-actions">
             <a href="#contact" class="btn btn-primary">Request early access</a>
             <a href="#solution" class="btn btn-ghost">See how it works</a>
           </div>
           <p class="hero-note">
-            Early-stage prototype under active development. Binary protocols are
-            supported first, with JavaScript Object Notation (JSON), Data Distribution
+            Early-stage prototype under active development. Binary protocols are the 
+            initial focus, with JavaScript Object Notation (JSON), Data Distribution
             Service (DDS), and Controller Area Network (CAN) planned.
           </p>
         </div>
@@ -104,7 +103,7 @@
             <div class="card-ico" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 17h5"/></svg>
             </div>
-            <h3>The system drifts from the ICD</h3>
+            <h3>Implementation drifts from the ICD</h3>
             <p>What the Interface Control Document (ICD) specifies and what the system actually sends often differ. That gap usually surfaces late.</p>
           </article>
           <article class="card">
@@ -163,14 +162,13 @@
       <div class="container">
         <div class="section-head">
           <span class="kicker">How it works</span>
-          <h2>Configure a project, then run an interactive mock HMI.</h2>
+          <h2>Configure once. Validate. Run.</h2>          
           <p class="section-sub">
-            RapidHMI is driven by a <em>project</em>, much of it derived from your
-            Interface Control Document (ICD). The project defines how protocol data is
-            received, decoded, and connected to the screen. Once it validates, it runs
-            as a live, interactive mock HMI: incoming messages drive the widgets, and
-            operating the widgets sends messages back to the connected system. It is
-            a configurable integration platform, not a protocol viewer.
+            RapidHMI is configured using a project, with much of its definition derived
+            from an Interface Control Document (ICD). The project defines how data is
+            received, interpreted and connected to an interactive mock Human Machine
+            Interface (HMI). Validate the project, then run it against live or simulated
+            systems to exercise both incoming and outgoing communication.
           </p>
         </div>
 
@@ -182,7 +180,7 @@
         <h3 class="subhead">The workflow, step by step</h3>
         <ol class="flow">
           <li class="flow-step"><span class="flow-n">1</span><span class="flow-t">Create a RapidHMI project</span></li>
-          <li class="flow-step"><span class="flow-n">2</span><span class="flow-t">Configure receivers</span></li>
+          <li class="flow-step"><span class="flow-n">2</span><span class="flow-t">Configure data sources</span></li>
           <li class="flow-step"><span class="flow-n">3</span><span class="flow-t">Define schemas</span></li>
           <li class="flow-step"><span class="flow-n">4</span><span class="flow-t">Configure rule sets</span></li>
           <li class="flow-step"><span class="flow-n">5</span><span class="flow-t">Create bindings</span></li>
@@ -194,15 +192,15 @@
         <div class="solution-points">
           <div class="sp">
             <h3>Built from your ICD</h3>
-            <p>A project captures the interface once: receivers describe where data arrives, schemas describe the messages, rule sets decode them, and bindings connect the result to the screen. Much of this comes straight from the Interface Control Document (ICD).</p>
+            <p>Define the interface once. Receivers describe where data comes from, schemas describe message layouts, rule sets decode protocol data, and bindings connect decoded values to the mock HMI. Much of this comes straight from the Interface Control Document (ICD).</p>
           </div>
           <div class="sp">
-            <h3>An interactive operator display</h3>
-            <p>The mock HMI is assembled from real widgets, such as status LEDs, gauges, switches, dials, and buttons, rather than a table of decoded values. It behaves like the panel an operator would use.</p>
+            <h3>An interactive mock interface</h3>
+            <p>Build a mock interface using switches, indicators, gauges, dials, buttons, and displays that behave like the target system. It provides an interactive representation of the target interface for integration, testing and verification.</p>
           </div>
           <div class="sp">
             <h3>Two-way communication</h3>
-            <p>Incoming protocol messages update the widgets in real time. Operating a widget, such as flipping a switch or pressing a button, sends a protocol message back to the connected system.</p>
+            <p>Incoming protocol messages update the widgets in real time. Interacting with widgets such as switches and buttons can generate protocol messages back to connected systems, allowing both input and output paths to be exercised.</p>
           </div>
         </div>
       </div>
@@ -220,9 +218,9 @@
           <article class="feature"><h3>Project-based setup</h3><p>Keep a project's data sources, message formats, and mappings together in one file you can version and reuse.</p></article>
           <article class="feature"><h3>Load, validate, run</h3><p>A simple workflow with clear stages, so it is obvious what is being checked and what is being executed.</p></article>
           <article class="feature"><h3>Configuration checks</h3><p>Catch broken references, duplicates, and format problems before runtime, with clear messages.</p></article>
-          <article class="feature"><h3>Connect a data source</h3><p>Describe where incoming data comes from and how it is received.</p></article>
-          <article class="feature"><h3>Message decoding</h3><p>Turn raw bytes into named, readable values using the message format you define.</p></article>
-          <article class="feature"><h3>Live value monitoring</h3><p>Watch decoded values update as data flows in, in one place.</p></article>
+          <article class="feature"><h3>Configure receivers</h3><p>Configure how protocol data enters the project from external systems.</p></article>
+          <article class="feature"><h3>Message mapping</h3><p>Turn raw bytes into named, readable values using the message format you define.</p></article>
+          <article class="feature"><h3>Live value monitoring</h3><p>Watch the mock HMI respond to live or simulated data.</p></article>
           <article class="feature"><h3>Inject test data</h3><p>Feed crafted messages into the running mock HMI to test specific cases on demand.</p></article>
           <article class="feature"><h3>Validation before run</h3><p>An invalid project is stopped before it starts, so you do not chase faults that the configuration could have caught.</p></article>
         </div>
@@ -383,7 +381,7 @@
           <div class="tl-item is-now">
             <span class="tl-tag">Now</span>
             <h3>Binary protocols</h3>
-            <p>Load a project, validate it, run a mock HMI, and watch decoded values update.</p>
+            <p>Load a project, validate it, run the mock HMI, and interact with it.</p>
           </div>
           <div class="tl-item">
             <span class="tl-tag">Next</span>
@@ -416,11 +414,11 @@
         <dl class="glossary">
           <div class="gl-item">
             <dt>Human Machine Interface (HMI)</dt>
-            <dd>The screen or panel an operator uses to monitor and control a system.</dd>
+            <dd>The controls and displays people use to interact with a system. An HMI may include switches, buttons, indicators, gauges, dials and displays.</dd>
           </div>
           <div class="gl-item">
             <dt>Mock HMI</dt>
-            <dd>A stand-in HMI used for testing while the real one is still being built.</dd>
+            <dd>An interactive representation of the target interface used for integration, testing, and verification before the production HMI or hardware is available.</dd>
           </div>
           <div class="gl-item">
             <dt>Interface Control Document (ICD)</dt>
@@ -474,17 +472,17 @@
       <p class="footer-tag">Build a mock HMI from your protocol data and start testing earlier, with one platform you reuse across projects.</p>
       <nav class="footer-links" aria-label="Footer">
         <a href="#problem">Problem</a>
-        <a href="#replaces">What it replaces</a>
-        <a href="#solution">How it works</a>
-        <a href="#build">Build vs. reuse</a>
+        <a href="#replaces">What It Replaces</a>
+        <a href="#solution">How It Works</a>
+        <a href="#build">Build vs. Reuse</a>
         <a href="#roadmap">Vision</a>
-        <a href="#glossary">Key terms</a>
+        <a href="#glossary">Key Terms</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
     <div class="container footer-base">
       <span>© 2026 RapidHMI</span>
-      <span>Early-stage prototype under active development.</span>
+      <span>RapidHMI is an early-stage prototype under active development.</span>
     </div>
   </footer>
 </body>
