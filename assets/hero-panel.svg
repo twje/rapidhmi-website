@@ -1,0 +1,95 @@
+<svg width="540" height="420" viewBox="0 0 540 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RapidHMI application preview">
+  <defs>
+    <linearGradient id="hp-accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="hp-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#16223a"/>
+      <stop offset="1" stop-color="#101a2c"/>
+    </linearGradient>
+    <filter id="hp-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- window -->
+  <g filter="url(#hp-shadow)">
+    <rect x="14" y="14" width="512" height="392" rx="14" fill="url(#hp-bg)" stroke="#26344c" stroke-width="1.5"/>
+  </g>
+
+  <!-- title bar -->
+  <rect x="14" y="14" width="512" height="38" rx="14" fill="#0f1828"/>
+  <rect x="14" y="40" width="512" height="12" fill="#0f1828"/>
+  <circle cx="36" cy="33" r="5" fill="#f87171"/>
+  <circle cx="54" cy="33" r="5" fill="#fbbf24"/>
+  <circle cx="72" cy="33" r="5" fill="#34d399"/>
+  <text x="270" y="37" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="#6f819b">RapidHMI / demo.project</text>
+
+  <!-- toolbar: Load / Validate / Run -->
+  <g font-family="Inter, sans-serif" font-size="12" font-weight="600">
+    <rect x="30" y="66" width="74" height="28" rx="7" fill="#1b2740" stroke="#2c3c58"/>
+    <text x="67" y="84" text-anchor="middle" fill="#cdd9ea">Load</text>
+    <rect x="112" y="66" width="84" height="28" rx="7" fill="#1b2740" stroke="#2c3c58"/>
+    <text x="154" y="84" text-anchor="middle" fill="#cdd9ea">Validate</text>
+    <rect x="204" y="66" width="64" height="28" rx="7" fill="url(#hp-accent)"/>
+    <text x="236" y="84" text-anchor="middle" fill="#04211e">▶ Run</text>
+    <text x="498" y="84" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="11" fill="#2dd4bf">● running</text>
+  </g>
+
+  <!-- left: project tree -->
+  <rect x="30" y="108" width="150" height="282" rx="10" fill="#121d30" stroke="#22314a"/>
+  <text x="44" y="130" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#6f819b" letter-spacing="1">PROJECT</text>
+  <g font-family="JetBrains Mono, monospace" font-size="11" fill="#9aacc4">
+    <rect x="38" y="142" width="134" height="20" rx="5" fill="#1a2740"/>
+    <text x="48" y="156" fill="#2dd4bf">▾ Receivers</text>
+    <text x="60" y="178">tlm_main</text>
+    <text x="48" y="200" fill="#2dd4bf">▾ Schemas</text>
+    <text x="60" y="222">nav_frame</text>
+    <text x="60" y="244">status_word</text>
+    <text x="48" y="266" fill="#2dd4bf">▾ Rule Sets</text>
+    <text x="60" y="288">decode_nav</text>
+    <text x="48" y="310" fill="#2dd4bf">▾ Bindings</text>
+    <text x="60" y="332">altitude → state</text>
+    <text x="60" y="354">heading → state</text>
+  </g>
+
+  <!-- right top: live state -->
+  <rect x="194" y="108" width="316" height="158" rx="10" fill="#121d30" stroke="#22314a"/>
+  <text x="208" y="130" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#6f819b" letter-spacing="1">LIVE VALUES</text>
+
+  <!-- gauge -->
+  <g transform="translate(208,142)">
+    <rect width="138" height="106" rx="8" fill="#0e1726" stroke="#223149"/>
+    <text x="14" y="24" font-family="Inter, sans-serif" font-size="11" fill="#6f819b">altitude</text>
+    <text x="14" y="58" font-family="JetBrains Mono, monospace" font-size="30" font-weight="600" fill="#e7edf5">12,480</text>
+    <text x="116" y="58" text-anchor="end" font-family="Inter, sans-serif" font-size="11" fill="#6f819b">ft</text>
+    <rect x="14" y="78" width="110" height="6" rx="3" fill="#1c2a42"/>
+    <rect x="14" y="78" width="78" height="6" rx="3" fill="url(#hp-accent)"/>
+  </g>
+
+  <!-- state values -->
+  <g transform="translate(358,142)" font-family="Inter, sans-serif" font-size="11">
+    <rect width="138" height="106" rx="8" fill="#0e1726" stroke="#223149"/>
+    <text x="14" y="24" fill="#6f819b">heading</text>
+    <text x="124" y="24" text-anchor="end" font-family="JetBrains Mono, monospace" fill="#e7edf5">087°</text>
+    <text x="14" y="48" fill="#6f819b">mode</text>
+    <text x="124" y="48" text-anchor="end" font-family="JetBrains Mono, monospace" fill="#2dd4bf">ARMED</text>
+    <text x="14" y="72" fill="#6f819b">link</text>
+    <text x="124" y="72" text-anchor="end" font-family="JetBrains Mono, monospace" fill="#34d399">OK</text>
+    <text x="14" y="96" fill="#6f819b">frames</text>
+    <text x="124" y="96" text-anchor="end" font-family="JetBrains Mono, monospace" fill="#e7edf5">4,512</text>
+  </g>
+
+  <!-- right bottom: diagnostics -->
+  <rect x="194" y="274" width="316" height="116" rx="10" fill="#121d30" stroke="#22314a"/>
+  <text x="208" y="296" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#6f819b" letter-spacing="1">DIAGNOSTICS</text>
+  <g font-family="JetBrains Mono, monospace" font-size="10.5">
+    <circle cx="214" cy="316" r="4" fill="#34d399"/>
+    <text x="226" y="320" fill="#9aacc4">project validated, 0 errors</text>
+    <circle cx="214" cy="340" r="4" fill="#fbbf24"/>
+    <text x="226" y="344" fill="#9aacc4">warn: status_word field unused</text>
+    <circle cx="214" cy="364" r="4" fill="#34d399"/>
+    <text x="226" y="368" fill="#9aacc4">receiver tlm_main connected</text>
+  </g>
+</svg>

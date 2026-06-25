@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RapidHMI: Start integration testing before the hardware is ready</title>
+  <meta name="description" content="RapidHMI builds a working mock Human Machine Interface (HMI) from your protocol and configuration data, so engineering teams can test data flows and find mapping problems before the real hardware or final HMI is available." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header" id="top">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="RapidHMI home">
+        <img src="assets/logo.svg" alt="" class="brand-mark" width="34" height="34" />
+        <span class="brand-name">Rapid<span class="brand-accent">HMI</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#problem">Problem</a>
+        <a href="#solution">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#users">Who it's for</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#glossary">Key terms</a>
+      </nav>
+      <a href="#contact" class="btn btn-primary btn-sm">Early access</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">For systems integration, test, and software teams</span>
+          <h1>Start integration testing before the hardware is ready.</h1>
+          <p class="lede">
+            RapidHMI builds a working mock Human Machine Interface (HMI) from your
+            protocol and configuration data. Use it to check data flows and catch
+            mapping problems early, without waiting for the real hardware, the lab,
+            or the final HMI.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Request early access</a>
+            <a href="#solution" class="btn btn-ghost">See how it works</a>
+          </div>
+          <p class="hero-note">
+            Early-stage prototype under active development. Binary protocols are
+            supported first, with JavaScript Object Notation (JSON), Data Distribution
+            Service (DDS), and Controller Area Network (CAN) planned.
+          </p>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <img src="assets/hero-panel.svg" alt="" class="hero-panel" width="540" height="420" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Pain quotes strip ===== -->
+    <section class="strip">
+      <div class="container strip-inner">
+        <p class="strip-quote">"We're still waiting on the real HMI."</p>
+        <p class="strip-quote">"We need to test before the hardware arrives."</p>
+        <p class="strip-quote">"The ICD says one thing, the system sends another."</p>
+        <p class="strip-quote">"We keep building the same throwaway tools."</p>
+      </div>
+    </section>
+
+    <!-- ===== Problem ===== -->
+    <section class="section" id="problem">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">The problem</span>
+          <h2>Integration testing starts too late.</h2>
+          <p class="section-sub">
+            On large programs, the parts of a system are rarely ready at the same time.
+            Teams wait on shared hardware, the final HMI, or a lab slot. By the time
+            everything comes together, mapping and configuration problems are expensive
+            to find and slow to fix.
+          </p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">⏳</div>
+            <h3>Hardware is a bottleneck</h3>
+            <p>Test rigs and labs are costly, shared, and hard to book. Work stops while teams wait for access.</p>
+          </article>
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">🧩</div>
+            <h3>The system drifts from the ICD</h3>
+            <p>What the Interface Control Document (ICD) specifies and what the system actually sends often differ. That gap usually surfaces late.</p>
+          </article>
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">🔧</div>
+            <h3>The same throwaway tools</h3>
+            <p>Engineers rebuild one-off test scripts for every project instead of reusing one repeatable setup.</p>
+          </article>
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">🐛</div>
+            <h3>Slow debugging</h3>
+            <p>Reproducing a problem can need several teams in the room at once. Every cycle takes longer than it should.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Solution ===== -->
+    <section class="section section-alt" id="solution">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">How it works</span>
+          <h2>Describe your data once, then run a mock HMI.</h2>
+          <p class="section-sub">
+            You tell RapidHMI where the data comes from and how the messages are laid
+            out. It checks the configuration, then runs a live mock HMI you can feed
+            with real or test data. No protocol-specific scripts scattered across the team.
+          </p>
+        </div>
+
+        <ol class="flow">
+          <li class="flow-step"><span class="flow-n">1</span><span class="flow-t">Create a project</span></li>
+          <li class="flow-step"><span class="flow-n">2</span><span class="flow-t">Connect a data source</span></li>
+          <li class="flow-step"><span class="flow-n">3</span><span class="flow-t">Describe the message format</span></li>
+          <li class="flow-step"><span class="flow-n">4</span><span class="flow-t">Map the fields to values</span></li>
+          <li class="flow-step"><span class="flow-n">5</span><span class="flow-t">Link values to the display</span></li>
+          <li class="flow-step"><span class="flow-n">6</span><span class="flow-t">Validate</span></li>
+          <li class="flow-step"><span class="flow-n">7</span><span class="flow-t">Run</span></li>
+          <li class="flow-step is-final"><span class="flow-n">8</span><span class="flow-t">Watch values update live</span></li>
+        </ol>
+
+        <div class="solution-points">
+          <div class="sp">
+            <h3>Problems caught before you run</h3>
+            <p>RapidHMI checks the configuration first and reports missing references, duplicates, and format errors. A small mistake in the data definition no longer wastes a whole test session.</p>
+          </div>
+          <div class="sp">
+            <h3>Drive it with test data</h3>
+            <p>Send your own crafted messages to the mock HMI to exercise specific fields and edge cases, without waiting for the live source to be available.</p>
+          </div>
+          <div class="sp">
+            <h3>One shared view of the data</h3>
+            <p>The team sees incoming values in one place, so it is clear how the messages on the wire map to what appears on screen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Features ===== -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">What it does today</span>
+          <h2>Built for engineers, focused on the basics first.</h2>
+          <p class="section-sub">This is an early prototype. The current focus is binary protocols and a clear load, validate, run workflow that teams can rely on.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature"><h3>Project-based setup</h3><p>Keep a project's data sources, message formats, and mappings together in one file you can version and reuse.</p></article>
+          <article class="feature"><h3>Load, validate, run</h3><p>A simple workflow with clear stages, so it is obvious what is being checked and what is being executed.</p></article>
+          <article class="feature"><h3>Configuration checks</h3><p>Catch broken references, duplicates, and format problems before runtime, with clear messages.</p></article>
+          <article class="feature"><h3>Connect a data source</h3><p>Describe where incoming data comes from and how it is received.</p></article>
+          <article class="feature"><h3>Message decoding</h3><p>Turn raw bytes into named, readable values using the message format you define.</p></article>
+          <article class="feature"><h3>Live value monitoring</h3><p>Watch decoded values update as data flows in, in one place.</p></article>
+          <article class="feature"><h3>Inject test data</h3><p>Feed crafted messages into the running mock HMI to test specific cases on demand.</p></article>
+          <article class="feature"><h3>Validation before run</h3><p>An invalid project is stopped before it starts, so you do not chase faults that the configuration could have caught.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Outcomes ===== -->
+    <section class="section section-alt" id="outcomes">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Why it matters</span>
+          <h2>What this is meant to change for your team.</h2>
+          <p class="section-sub">RapidHMI is being designed around the cost of late integration. These are the outcomes it aims to support.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">📆</div>
+            <h3>Test earlier</h3>
+            <p>Start checking data flows as soon as the message definitions exist, not when the hardware finally arrives.</p>
+          </article>
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">💷</div>
+            <h3>Spend less on lab time</h3>
+            <p>Move work off shared rigs and expensive labs by doing more of it on a desktop first.</p>
+          </article>
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">🛡️</div>
+            <h3>Lower integration risk</h3>
+            <p>Find mapping and configuration faults early, when they are cheap to fix, instead of at formal integration.</p>
+          </article>
+          <article class="card">
+            <div class="card-ico" aria-hidden="true">♻️</div>
+            <h3>Stop rebuilding tools</h3>
+            <p>Replace one-off scripts with a repeatable setup the whole team can share and reuse.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Target users ===== -->
+    <section class="section" id="users">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Who it's for</span>
+          <h2>Teams that carry integration risk.</h2>
+          <p class="section-sub">RapidHMI is being built for the people who feel late integration first, on large programs in regulated and safety-critical industries.</p>
+        </div>
+        <ul class="pill-list">
+          <li>Systems integration engineers</li>
+          <li>Test &amp; verification engineers</li>
+          <li>Software engineers</li>
+          <li>Simulation teams</li>
+          <li>HMI developers</li>
+          <li>Embedded &amp; software integration</li>
+          <li>Engineering managers</li>
+        </ul>
+
+        <div class="benefits">
+          <h3 class="benefits-title">Common across defence, aerospace, automotive, mining, and industrial automation</h3>
+          <div class="benefits-grid">
+            <span>Programs span years</span>
+            <span>Hardware arrives late</span>
+            <span>Many teams, one system</span>
+            <span>Strict interface documents</span>
+            <span>Expensive lab and rig time</span>
+            <span>High cost of late faults</span>
+            <span>Repeatable testing required</span>
+            <span>Long integration phases</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Roadmap ===== -->
+    <section class="section section-alt" id="roadmap">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Roadmap</span>
+          <h2>Binary first, then wider protocol support.</h2>
+          <p class="section-sub">The design keeps the load, validate, run workflow the same as new protocols are added, so support grows without reworking how the tool is used.</p>
+        </div>
+        <div class="timeline">
+          <div class="tl-item is-now">
+            <span class="tl-tag">Now</span>
+            <h3>Binary protocols</h3>
+            <p>Load a project, validate it, run a mock HMI, and watch decoded values update.</p>
+          </div>
+          <div class="tl-item">
+            <span class="tl-tag">Next</span>
+            <h3>JSON messages</h3>
+            <p>Support for JavaScript Object Notation (JSON), a common text-based message format.</p>
+          </div>
+          <div class="tl-item">
+            <span class="tl-tag">Later</span>
+            <h3>DDS and CAN</h3>
+            <p>Data Distribution Service (DDS) and Controller Area Network (CAN), to cover more integration environments.</p>
+          </div>
+          <div class="tl-item">
+            <span class="tl-tag">Exploring</span>
+            <h3>Designer and playback</h3>
+            <p>A visual screen designer with widgets, plus recording and replay of captured sessions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Glossary ===== -->
+    <section class="section" id="glossary">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Key terms</span>
+          <h2>Terms used on this page.</h2>
+          <p class="section-sub">Plain definitions for the terminology above, for anyone newer to integration work.</p>
+        </div>
+        <dl class="glossary">
+          <div class="gl-item">
+            <dt>Human Machine Interface (HMI)</dt>
+            <dd>The screen or panel an operator uses to monitor and control a system.</dd>
+          </div>
+          <div class="gl-item">
+            <dt>Mock HMI</dt>
+            <dd>A stand-in HMI used for testing while the real one is still being built.</dd>
+          </div>
+          <div class="gl-item">
+            <dt>Interface Control Document (ICD)</dt>
+            <dd>The document that defines how two systems exchange data: the message formats, fields, and units.</dd>
+          </div>
+          <div class="gl-item">
+            <dt>Protocol</dt>
+            <dd>The agreed format and rules for how data is sent between systems, for example binary, JSON, DDS, or CAN.</dd>
+          </div>
+          <div class="gl-item">
+            <dt>Integration testing</dt>
+            <dd>Checking that separate parts of a system work correctly together, not just on their own.</dd>
+          </div>
+          <div class="gl-item">
+            <dt>Data source</dt>
+            <dd>Where RapidHMI reads incoming messages from during a test.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section cta" id="contact">
+      <div class="container cta-inner">
+        <h2>Interested in early access?</h2>
+        <p>RapidHMI is an early-stage prototype, built around real integration problems. If your team waits on hardware or finds mapping issues late, we would like to talk about a pilot.</p>
+        <div class="cta-actions">
+          <a href="mailto:hello@rapidhmi.dev?subject=RapidHMI%20early%20access" class="btn btn-primary">Contact us about a pilot</a>
+          <a href="#solution" class="btn btn-ghost">See how it works</a>
+        </div>
+        <p class="cta-fine">No production claims. This is an honest look at where the prototype is today.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.svg" alt="" width="28" height="28" />
+        <span>Rapid<span class="brand-accent">HMI</span></span>
+      </div>
+      <p class="footer-tag">Build a mock HMI from your protocol data and start testing earlier.</p>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#problem">Problem</a>
+        <a href="#solution">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#glossary">Key terms</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="container footer-base">
+      <span>© 2026 RapidHMI</span>
+      <span>Early-stage prototype under active development.</span>
+    </div>
+  </footer>
+</body>
+</html>

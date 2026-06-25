@@ -1,0 +1,13 @@
+<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RapidHMI logo">
+  <defs>
+    <linearGradient id="rh-g" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="32" height="32" rx="9" fill="#0f1622" stroke="url(#rh-g)" stroke-width="1.5"/>
+  <!-- signal / waveform mark -->
+  <path d="M6 21 L11 21 L13.5 11 L17 26 L20.5 15 L22.5 21 L28 21"
+        stroke="url(#rh-g)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+  <circle cx="28" cy="21" r="1.9" fill="#38bdf8"/>
+</svg>
