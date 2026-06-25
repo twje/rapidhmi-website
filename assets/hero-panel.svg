@@ -42,16 +42,16 @@
   <text x="44" y="130" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#6f819b" letter-spacing="1">PROJECT</text>
   <g font-family="JetBrains Mono, monospace" font-size="11" fill="#9aacc4">
     <rect x="38" y="142" width="134" height="20" rx="5" fill="#1a2740"/>
-    <text x="48" y="156" fill="#2dd4bf">▾ Receivers</text>
+    <text x="48" y="156" fill="#2dd4bf">▾ Data sources</text>
     <text x="60" y="178">tlm_main</text>
-    <text x="48" y="200" fill="#2dd4bf">▾ Schemas</text>
+    <text x="48" y="200" fill="#2dd4bf">▾ Message formats</text>
     <text x="60" y="222">nav_frame</text>
     <text x="60" y="244">status_word</text>
-    <text x="48" y="266" fill="#2dd4bf">▾ Rule Sets</text>
+    <text x="48" y="266" fill="#2dd4bf">▾ Decoding</text>
     <text x="60" y="288">decode_nav</text>
-    <text x="48" y="310" fill="#2dd4bf">▾ Bindings</text>
-    <text x="60" y="332">altitude → state</text>
-    <text x="60" y="354">heading → state</text>
+    <text x="48" y="310" fill="#2dd4bf">▾ Display values</text>
+    <text x="60" y="332">altitude → screen</text>
+    <text x="60" y="354">heading → screen</text>
   </g>
 
   <!-- right top: live state -->

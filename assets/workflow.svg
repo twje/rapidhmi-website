@@ -1,0 +1,75 @@
+<svg width="1040" height="340" viewBox="0 0 1040 340" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RapidHMI workflow: a protocol definition and a data source become a running mock HMI through describe, map, and validate steps">
+  <defs>
+    <linearGradient id="wf-accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <marker id="wf-arrow" markerWidth="9" markerHeight="9" refX="5.5" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#2dd4bf"/>
+    </marker>
+  </defs>
+
+  <!-- column labels -->
+  <g font-family="Inter, sans-serif" font-size="11.5" font-weight="700" letter-spacing="1.4">
+    <text x="129" y="32" text-anchor="middle" fill="#6f819b">WHAT YOU ALREADY HAVE</text>
+    <text x="500" y="32" text-anchor="middle" fill="#2dd4bf">WHAT RAPIDHMI DOES</text>
+    <text x="888" y="32" text-anchor="middle" fill="#6f819b">WHAT YOU GET</text>
+  </g>
+
+  <!-- inputs -->
+  <g font-family="Inter, sans-serif">
+    <rect x="24" y="78" width="210" height="78" rx="10" fill="#131c2b" stroke="#243248"/>
+    <text x="44" y="112" font-size="15" font-weight="600" fill="#e7edf5">Protocol definition</text>
+    <text x="44" y="134" font-size="12" fill="#9aacc4">Interface Control Document (ICD)</text>
+
+    <rect x="24" y="184" width="210" height="78" rx="10" fill="#131c2b" stroke="#243248"/>
+    <text x="44" y="218" font-size="15" font-weight="600" fill="#e7edf5">A data source</text>
+    <text x="44" y="240" font-size="12" fill="#9aacc4">Live feed, file, or test data</text>
+  </g>
+
+  <!-- arrow: inputs -> rapidhmi -->
+  <line x1="240" y1="170" x2="298" y2="170" stroke="#2dd4bf" stroke-width="2" marker-end="url(#wf-arrow)"/>
+
+  <!-- rapidhmi panel -->
+  <rect x="306" y="58" width="388" height="224" rx="14" fill="#0f1622" stroke="url(#wf-accent)" stroke-opacity="0.55"/>
+  <g font-family="Inter, sans-serif">
+    <!-- step 1 -->
+    <circle cx="340" cy="106" r="13" fill="#18243a"/>
+    <text x="340" y="111" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#2dd4bf">1</text>
+    <text x="366" y="103" font-size="15" font-weight="600" fill="#e7edf5">Describe the message format</text>
+    <text x="366" y="122" font-size="12" fill="#9aacc4">Lay out the fields, types, and units</text>
+
+    <!-- step 2 -->
+    <circle cx="340" cy="170" r="13" fill="#18243a"/>
+    <text x="340" y="175" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#2dd4bf">2</text>
+    <text x="366" y="167" font-size="15" font-weight="600" fill="#e7edf5">Map fields to display values</text>
+    <text x="366" y="186" font-size="12" fill="#9aacc4">Decode raw bytes into named readings</text>
+
+    <!-- step 3 -->
+    <circle cx="340" cy="234" r="13" fill="#18243a"/>
+    <text x="340" y="239" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#2dd4bf">3</text>
+    <text x="366" y="231" font-size="15" font-weight="600" fill="#e7edf5">Validate the configuration</text>
+    <text x="366" y="250" font-size="12" fill="#9aacc4">Catch broken references before you run</text>
+  </g>
+
+  <!-- arrow: rapidhmi -> output -->
+  <line x1="694" y1="170" x2="752" y2="170" stroke="#2dd4bf" stroke-width="2" marker-end="url(#wf-arrow)"/>
+
+  <!-- output panel: running mock HMI -->
+  <rect x="762" y="78" width="254" height="184" rx="12" fill="#131c2b" stroke="#243248"/>
+  <rect x="762" y="78" width="254" height="34" rx="12" fill="#0f1828"/>
+  <rect x="762" y="98" width="254" height="14" fill="#0f1828"/>
+  <text x="782" y="100" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#e7edf5">Running mock HMI</text>
+  <circle cx="998" cy="95" r="4" fill="#34d399"/>
+
+  <g font-family="JetBrains Mono, monospace" font-size="13">
+    <text x="782" y="146" fill="#6f819b" font-family="Inter, sans-serif" font-size="12">altitude</text>
+    <text x="998" y="146" text-anchor="end" fill="#e7edf5">12,480 ft</text>
+    <text x="782" y="176" fill="#6f819b" font-family="Inter, sans-serif" font-size="12">heading</text>
+    <text x="998" y="176" text-anchor="end" fill="#e7edf5">087&#176;</text>
+    <text x="782" y="206" fill="#6f819b" font-family="Inter, sans-serif" font-size="12">mode</text>
+    <text x="998" y="206" text-anchor="end" fill="#2dd4bf">ARMED</text>
+    <text x="782" y="236" fill="#6f819b" font-family="Inter, sans-serif" font-size="12">link</text>
+    <text x="998" y="236" text-anchor="end" fill="#34d399">OK</text>
+  </g>
+</svg>

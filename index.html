@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RapidHMI: Start integration testing before the hardware is ready</title>
-  <meta name="description" content="RapidHMI builds a working mock Human Machine Interface (HMI) from your protocol and configuration data, so engineering teams can test data flows and find mapping problems before the real hardware or final HMI is available." />
+  <meta name="description" content="RapidHMI turns your protocol definitions into a working mock Human Machine Interface (HMI), so engineering teams can test data flows and catch mapping problems early, and reuse one platform across projects instead of rebuilding throwaway tools each time." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -21,10 +21,11 @@
       </a>
       <nav class="nav-links" aria-label="Primary">
         <a href="#problem">Problem</a>
+        <a href="#replaces">What it replaces</a>
         <a href="#solution">How it works</a>
-        <a href="#features">Features</a>
-        <a href="#users">Who it's for</a>
-        <a href="#roadmap">Roadmap</a>
+        <a href="#outcomes">Why it matters</a>
+        <a href="#build">Build vs. reuse</a>
+        <a href="#roadmap">Vision</a>
         <a href="#glossary">Key terms</a>
       </nav>
       <a href="#contact" class="btn btn-primary btn-sm">Early access</a>
@@ -37,14 +38,20 @@
       <div class="hero-grid-bg" aria-hidden="true"></div>
       <div class="container hero-inner">
         <div class="hero-copy">
-          <span class="eyebrow">For systems integration, test, and software teams</span>
+          <span class="eyebrow">For systems integration, test, and software engineering teams</span>
           <h1>Start integration testing before the hardware is ready.</h1>
           <p class="lede">
-            RapidHMI builds a working mock Human Machine Interface (HMI) from your
-            protocol and configuration data. Use it to check data flows and catch
-            mapping problems early, without waiting for the real hardware, the lab,
-            or the final HMI.
+            RapidHMI turns your protocol definitions into a working mock
+            <em>Human Machine Interface (HMI)</em>, the screen an operator
+            uses to monitor a system. Feed it real or test data to check your data
+            flows and catch mapping errors early, instead of waiting on the
+            hardware, the lab, or the final HMI.
           </p>
+          <ul class="hero-bullets">
+            <li>Test as soon as the message definitions exist</li>
+            <li>Catch mapping faults while they are cheap to fix</li>
+            <li>Reuse one setup across projects, not a new throwaway tool each time</li>
+          </ul>
           <div class="hero-actions">
             <a href="#contact" class="btn btn-primary">Request early access</a>
             <a href="#solution" class="btn btn-ghost">See how it works</a>
@@ -87,22 +94,30 @@
         </div>
         <div class="cards">
           <article class="card">
-            <div class="card-ico" aria-hidden="true">⏳</div>
+            <div class="card-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></svg>
+            </div>
             <h3>Hardware is a bottleneck</h3>
             <p>Test rigs and labs are costly, shared, and hard to book. Work stops while teams wait for access.</p>
           </article>
           <article class="card">
-            <div class="card-ico" aria-hidden="true">🧩</div>
+            <div class="card-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V7z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 17h5"/></svg>
+            </div>
             <h3>The system drifts from the ICD</h3>
             <p>What the Interface Control Document (ICD) specifies and what the system actually sends often differ. That gap usually surfaces late.</p>
           </article>
           <article class="card">
-            <div class="card-ico" aria-hidden="true">🔧</div>
+            <div class="card-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
             <h3>The same throwaway tools</h3>
             <p>Engineers rebuild one-off test scripts for every project instead of reusing one repeatable setup.</p>
           </article>
           <article class="card">
-            <div class="card-ico" aria-hidden="true">🐛</div>
+            <div class="card-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8V6a3 3 0 0 1 6 0v2"/><rect x="7" y="8" width="10" height="10" rx="5"/><path d="M3 13h4M17 13h4M4.5 8.5l2.5 1.5M19.5 8.5 17 10M4.5 17.5l2.5-1.5M19.5 17.5 17 16"/></svg>
+            </div>
             <h3>Slow debugging</h3>
             <p>Reproducing a problem can need several teams in the room at once. Every cycle takes longer than it should.</p>
           </article>
@@ -110,8 +125,41 @@
       </div>
     </section>
 
+    <!-- ===== What it replaces ===== -->
+    <section class="section section-alt" id="replaces">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">What it replaces</span>
+          <h2>You've probably built this tool before, more than once.</h2>
+          <p class="section-sub">
+            Most teams already solve this problem on every project. The work lands on
+            an engineer or two, gets written under delivery pressure, and is rebuilt
+            from scratch the next time round. RapidHMI is meant to take the place of
+            that recurring effort.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature"><h3>Temporary Python scripts</h3><p>Quick utilities to parse a feed or print decoded fields, written for one task and rarely documented.</p></article>
+          <article class="feature"><h3>Throwaway Qt applications</h3><p>Small desktop apps that show a handful of values, maintained by whoever happens to be free.</p></article>
+          <article class="feature"><h3>Custom protocol viewers</h3><p>One-off viewers for a specific message format that don't survive past the program they were built for.</p></article>
+          <article class="feature"><h3>One-off UDP listeners</h3><p>Scripts that open a socket, dump packets to the console, and get deleted once the task is done.</p></article>
+          <article class="feature"><h3>Spreadsheet field maps</h3><p>Excel sheets mapping bytes to fields and units, kept in step with the real system by hand.</p></article>
+          <article class="feature"><h3>Internal test harnesses</h3><p>Bespoke rigs to inject messages, rebuilt each time because the last one was too project-specific to reuse.</p></article>
+        </div>
+        <div class="callout">
+          <p>
+            None of these are the wrong call in the moment. The cost is that the same
+            work is repeated on the next program, and the next. RapidHMI aims to replace
+            that cycle with <strong>one reusable platform</strong>: the same load,
+            validate, run workflow on every project, instead of a fresh throwaway utility
+            each time.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== Solution ===== -->
-    <section class="section section-alt" id="solution">
+    <section class="section" id="solution">
       <div class="container">
         <div class="section-head">
           <span class="kicker">How it works</span>
@@ -119,10 +167,17 @@
           <p class="section-sub">
             You tell RapidHMI where the data comes from and how the messages are laid
             out. It checks the configuration, then runs a live mock HMI you can feed
-            with real or test data. No protocol-specific scripts scattered across the team.
+            with real or test data. No protocol-specific scripts scattered across
+            the team.
           </p>
         </div>
 
+        <figure class="workflow">
+          <img src="assets/workflow.svg" alt="A protocol definition (Interface Control Document) and a data source feed into RapidHMI, which describes the message format, maps fields to display values, and validates the configuration, producing a running mock HMI showing live values." />
+          <figcaption>From protocol definition to a running mock HMI: the same path on every project.</figcaption>
+        </figure>
+
+        <h3 class="subhead">The workflow, step by step</h3>
         <ol class="flow">
           <li class="flow-step"><span class="flow-n">1</span><span class="flow-t">Create a project</span></li>
           <li class="flow-step"><span class="flow-n">2</span><span class="flow-t">Connect a data source</span></li>
@@ -152,12 +207,12 @@
     </section>
 
     <!-- ===== Features ===== -->
-    <section class="section" id="features">
+    <section class="section section-alt" id="features">
       <div class="container">
         <div class="section-head">
           <span class="kicker">What it does today</span>
           <h2>Built for engineers, focused on the basics first.</h2>
-          <p class="section-sub">This is an early prototype. The current focus is binary protocols and a clear load, validate, run workflow that teams can rely on.</p>
+          <p class="section-sub">This is an early prototype. The current focus is binary protocols and a clear load, validate, run workflow that teams can rely on. We would rather do that part well than claim more than the tool does.</p>
         </div>
         <div class="feature-grid">
           <article class="feature"><h3>Project-based setup</h3><p>Keep a project's data sources, message formats, and mappings together in one file you can version and reuse.</p></article>
@@ -173,34 +228,104 @@
     </section>
 
     <!-- ===== Outcomes ===== -->
-    <section class="section section-alt" id="outcomes">
+    <section class="section" id="outcomes">
       <div class="container">
         <div class="section-head">
           <span class="kicker">Why it matters</span>
-          <h2>What this is meant to change for your team.</h2>
-          <p class="section-sub">RapidHMI is being designed around the cost of late integration. These are the outcomes it aims to support.</p>
+          <h2>The case for adopting it.</h2>
+          <p class="section-sub">RapidHMI is being designed around the real cost of late integration. These are the recurring costs it aims to reduce, the reasons a team would choose it over rebuilding tooling again.</p>
         </div>
-        <div class="cards">
-          <article class="card">
-            <div class="card-ico" aria-hidden="true">📆</div>
-            <h3>Test earlier</h3>
-            <p>Start checking data flows as soon as the message definitions exist, not when the hardware finally arrives.</p>
+        <div class="outcome-grid">
+          <article class="outcome">
+            <div class="card-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+            </div>
+            <h3>Less waiting on shared hardware</h3>
+            <p>Move work off shared rigs and expensive labs onto a desktop, so progress doesn't stall waiting for a slot.</p>
           </article>
-          <article class="card">
-            <div class="card-ico" aria-hidden="true">💷</div>
-            <h3>Spend less on lab time</h3>
-            <p>Move work off shared rigs and expensive labs by doing more of it on a desktop first.</p>
+          <article class="outcome">
+            <div class="card-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.1 5.1l2.1 2.1M16.8 16.8l2.1 2.1M18.9 5.1 16.8 7.2M7.2 16.8 5.1 18.9"/></svg>
+            </div>
+            <h3>Less engineering effort</h3>
+            <p>Describe the data once and reuse it, instead of writing fresh code for every interface on every project.</p>
           </article>
-          <article class="card">
-            <div class="card-ico" aria-hidden="true">🛡️</div>
+          <article class="outcome">
+            <div class="card-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.8-3.4 7.9-8 9-4.6-1.1-8-4.2-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
             <h3>Lower integration risk</h3>
-            <p>Find mapping and configuration faults early, when they are cheap to fix, instead of at formal integration.</p>
+            <p>Find mapping and configuration faults early, when they are cheap to fix, not at formal integration.</p>
           </article>
-          <article class="card">
-            <div class="card-ico" aria-hidden="true">♻️</div>
-            <h3>Stop rebuilding tools</h3>
-            <p>Replace one-off scripts with a repeatable setup the whole team can share and reuse.</p>
+          <article class="outcome">
+            <div class="card-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8V6a3 3 0 0 1 6 0v2"/><rect x="7" y="8" width="10" height="10" rx="5"/><path d="M3 13h4M17 13h4M4.5 8.5l2.5 1.5M19.5 8.5 17 10M4.5 17.5l2.5-1.5M19.5 17.5 17 16"/></svg>
+            </div>
+            <h3>Less repeated debugging</h3>
+            <p>Reproduce and inspect a problem from one place, without pulling several teams into the lab for every cycle.</p>
           </article>
+          <article class="outcome">
+            <div class="card-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11A8 8 0 0 0 6.3 6.3L3 9"/><path d="M3 4v5h5"/><path d="M4 13a8 8 0 0 0 13.7 4.7L21 15"/><path d="M21 20v-5h-5"/></svg>
+            </div>
+            <h3>Less throwaway tooling</h3>
+            <p>Replace one-off scripts with a setup the whole team can version, share, and carry to the next project.</p>
+          </article>
+          <article class="outcome">
+            <div class="card-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l6 6 4-4 8 8"/><path d="M21 17h-4M21 17v-4"/></svg>
+            </div>
+            <h3>Lower cost per cycle</h3>
+            <p>Cut the time and money spent re-running integration each time a definition or mapping changes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Build vs. reuse ===== -->
+    <section class="section section-alt" id="build">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Why not build it yourself?</span>
+          <h2>You could build this in-house. Most teams already have.</h2>
+          <p class="section-sub">
+            The question isn't whether your engineers can write another viewer or test
+            harness. Clearly they can. It's whether it's worth rebuilding the same
+            tool, program after program, instead of investing once in something that
+            carries across them.
+          </p>
+        </div>
+        <div class="compare">
+          <div class="compare-col">
+            <span class="compare-tag compare-tag-plain">Internal one-off tooling</span>
+            <ul class="compare-list compare-list-con">
+              <li>Rebuilt or adapted for each new program</li>
+              <li>Owned by one engineer; knowledge leaves when they do</li>
+              <li>Undocumented and rarely tested</li>
+              <li>Tied to a single protocol or project</li>
+              <li>Maintenance competes with delivery work</li>
+              <li>Hard to hand over or reuse across teams</li>
+            </ul>
+          </div>
+          <div class="compare-col compare-col-accent">
+            <span class="compare-tag compare-tag-accent">RapidHMI as a platform</span>
+            <ul class="compare-list compare-list-pro">
+              <li>One workflow that carries across projects</li>
+              <li>Configuration lives in version control, not in someone's head</li>
+              <li>Validation built into the workflow</li>
+              <li>Designed to support more protocols over time</li>
+              <li>Maintained as a shared platform, not a side task</li>
+              <li>Reusable across teams and programs</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout">
+          <p>
+            To be clear: RapidHMI is early, and for some jobs a quick script will always
+            be the right answer. The point isn't that internal tooling is wrong. It's
+            that the same problem recurs on every integration program, and a reusable
+            platform removes the repeated cost of solving it from scratch.
+          </p>
         </div>
       </div>
     </section>
@@ -217,10 +342,10 @@
           <li>Systems integration engineers</li>
           <li>Test &amp; verification engineers</li>
           <li>Software engineers</li>
+          <li>Technical leads</li>
+          <li>Engineering managers</li>
           <li>Simulation teams</li>
           <li>HMI developers</li>
-          <li>Embedded &amp; software integration</li>
-          <li>Engineering managers</li>
         </ul>
 
         <div class="benefits">
@@ -239,13 +364,18 @@
       </div>
     </section>
 
-    <!-- ===== Roadmap ===== -->
+    <!-- ===== Vision / Roadmap ===== -->
     <section class="section section-alt" id="roadmap">
       <div class="container">
         <div class="section-head">
-          <span class="kicker">Roadmap</span>
-          <h2>Binary first, then wider protocol support.</h2>
-          <p class="section-sub">The design keeps the load, validate, run workflow the same as new protocols are added, so support grows without reworking how the tool is used.</p>
+          <span class="kicker">The longer-term vision</span>
+          <h2>A mock HMI is the starting point, not the limit.</h2>
+          <p class="section-sub">
+            RapidHMI is being built as an integration platform. The mock HMI proves the
+            core idea: describe your data once, then work with it live. The same
+            foundation is designed to grow into the wider toolset integration teams
+            already reach for, while the load, validate, run workflow stays the same.
+          </p>
         </div>
         <div class="timeline">
           <div class="tl-item is-now">
@@ -265,10 +395,11 @@
           </div>
           <div class="tl-item">
             <span class="tl-tag">Exploring</span>
-            <h3>Designer and playback</h3>
-            <p>A visual screen designer with widgets, plus recording and replay of captured sessions.</p>
+            <h3>Record, replay, design, test</h3>
+            <p>Recording and playback of captured sessions, protocol replay against the mock HMI, a visual HMI designer, and automated testing: the full integration workflow, not just live monitoring.</p>
           </div>
         </div>
+        <p class="vision-note">Each step reuses the same core, so the platform grows by extension rather than by bolting on unrelated features.</p>
       </div>
     </section>
 
@@ -298,6 +429,14 @@
             <dd>The agreed format and rules for how data is sent between systems, for example binary, JSON, DDS, or CAN.</dd>
           </div>
           <div class="gl-item">
+            <dt>Data Distribution Service (DDS)</dt>
+            <dd>A publish-subscribe standard for sharing real-time data between distributed systems.</dd>
+          </div>
+          <div class="gl-item">
+            <dt>Controller Area Network (CAN)</dt>
+            <dd>A messaging bus widely used in vehicles and industrial equipment to connect controllers and sensors.</dd>
+          </div>
+          <div class="gl-item">
             <dt>Integration testing</dt>
             <dd>Checking that separate parts of a system work correctly together, not just on their own.</dd>
           </div>
@@ -313,7 +452,7 @@
     <section class="section cta" id="contact">
       <div class="container cta-inner">
         <h2>Interested in early access?</h2>
-        <p>RapidHMI is an early-stage prototype, built around real integration problems. If your team waits on hardware or finds mapping issues late, we would like to talk about a pilot.</p>
+        <p>RapidHMI is an early-stage prototype, built around real integration problems. If your team waits on hardware, finds mapping issues late, or keeps rebuilding the same tooling, we would like to talk about a pilot.</p>
         <div class="cta-actions">
           <a href="mailto:hello@rapidhmi.dev?subject=RapidHMI%20early%20access" class="btn btn-primary">Contact us about a pilot</a>
           <a href="#solution" class="btn btn-ghost">See how it works</a>
@@ -330,12 +469,13 @@
         <img src="assets/logo.svg" alt="" width="28" height="28" />
         <span>Rapid<span class="brand-accent">HMI</span></span>
       </div>
-      <p class="footer-tag">Build a mock HMI from your protocol data and start testing earlier.</p>
+      <p class="footer-tag">Build a mock HMI from your protocol data and start testing earlier, with one platform you reuse across projects.</p>
       <nav class="footer-links" aria-label="Footer">
         <a href="#problem">Problem</a>
+        <a href="#replaces">What it replaces</a>
         <a href="#solution">How it works</a>
-        <a href="#features">Features</a>
-        <a href="#roadmap">Roadmap</a>
+        <a href="#build">Build vs. reuse</a>
+        <a href="#roadmap">Vision</a>
         <a href="#glossary">Key terms</a>
         <a href="#contact">Contact</a>
       </nav>
