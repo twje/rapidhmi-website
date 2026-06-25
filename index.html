@@ -163,44 +163,46 @@
       <div class="container">
         <div class="section-head">
           <span class="kicker">How it works</span>
-          <h2>Describe your data once, then run a mock HMI.</h2>
+          <h2>Configure a project, then run an interactive mock HMI.</h2>
           <p class="section-sub">
-            You tell RapidHMI where the data comes from and how the messages are laid
-            out. It checks the configuration, then runs a live mock HMI you can feed
-            with real or test data. No protocol-specific scripts scattered across
-            the team.
+            RapidHMI is driven by a <em>project</em>, much of it derived from your
+            Interface Control Document (ICD). The project defines how protocol data is
+            received, decoded, and connected to the screen. Once it validates, it runs
+            as a live, interactive mock HMI: incoming messages drive the widgets, and
+            operating the widgets sends messages back to the connected system. It is
+            a configurable integration platform, not a protocol viewer.
           </p>
         </div>
 
         <figure class="workflow">
-          <img src="assets/workflow.svg" alt="A protocol definition (Interface Control Document) and a data source feed into RapidHMI, which describes the message format, maps fields to display values, and validates the configuration, producing a running mock HMI showing live values." />
-          <figcaption>From protocol definition to a running mock HMI: the same path on every project.</figcaption>
+          <img src="assets/workflow.svg" alt="An Interface Control Document (ICD) defines a RapidHMI project containing receivers, schemas, rule sets, and bindings. The validated project runs as an interactive mock HMI with gauges, status LEDs, a switch, a dial, and a button. Incoming protocol messages update the widgets, and operating the widgets sends protocol messages back to the connected system." />
+          <figcaption>From an ICD to a running, interactive mock HMI, with protocol data flowing both ways.</figcaption>
         </figure>
 
         <h3 class="subhead">The workflow, step by step</h3>
         <ol class="flow">
-          <li class="flow-step"><span class="flow-n">1</span><span class="flow-t">Create a project</span></li>
-          <li class="flow-step"><span class="flow-n">2</span><span class="flow-t">Connect a data source</span></li>
-          <li class="flow-step"><span class="flow-n">3</span><span class="flow-t">Describe the message format</span></li>
-          <li class="flow-step"><span class="flow-n">4</span><span class="flow-t">Map the fields to values</span></li>
-          <li class="flow-step"><span class="flow-n">5</span><span class="flow-t">Link values to the display</span></li>
-          <li class="flow-step"><span class="flow-n">6</span><span class="flow-t">Validate</span></li>
-          <li class="flow-step"><span class="flow-n">7</span><span class="flow-t">Run</span></li>
-          <li class="flow-step is-final"><span class="flow-n">8</span><span class="flow-t">Watch values update live</span></li>
+          <li class="flow-step"><span class="flow-n">1</span><span class="flow-t">Create a RapidHMI project</span></li>
+          <li class="flow-step"><span class="flow-n">2</span><span class="flow-t">Configure receivers</span></li>
+          <li class="flow-step"><span class="flow-n">3</span><span class="flow-t">Define schemas</span></li>
+          <li class="flow-step"><span class="flow-n">4</span><span class="flow-t">Configure rule sets</span></li>
+          <li class="flow-step"><span class="flow-n">5</span><span class="flow-t">Create bindings</span></li>
+          <li class="flow-step"><span class="flow-n">6</span><span class="flow-t">Validate the project</span></li>
+          <li class="flow-step"><span class="flow-n">7</span><span class="flow-t">Run the mock HMI</span></li>
+          <li class="flow-step is-final"><span class="flow-n">8</span><span class="flow-t">Send &amp; receive live data</span></li>
         </ol>
 
         <div class="solution-points">
           <div class="sp">
-            <h3>Problems caught before you run</h3>
-            <p>RapidHMI checks the configuration first and reports missing references, duplicates, and format errors. A small mistake in the data definition no longer wastes a whole test session.</p>
+            <h3>Built from your ICD</h3>
+            <p>A project captures the interface once: receivers describe where data arrives, schemas describe the messages, rule sets decode them, and bindings connect the result to the screen. Much of this comes straight from the Interface Control Document (ICD).</p>
           </div>
           <div class="sp">
-            <h3>Drive it with test data</h3>
-            <p>Send your own crafted messages to the mock HMI to exercise specific fields and edge cases, without waiting for the live source to be available.</p>
+            <h3>An interactive operator display</h3>
+            <p>The mock HMI is assembled from real widgets, such as status LEDs, gauges, switches, dials, and buttons, rather than a table of decoded values. It behaves like the panel an operator would use.</p>
           </div>
           <div class="sp">
-            <h3>One shared view of the data</h3>
-            <p>The team sees incoming values in one place, so it is clear how the messages on the wire map to what appears on screen.</p>
+            <h3>Two-way communication</h3>
+            <p>Incoming protocol messages update the widgets in real time. Operating a widget, such as flipping a switch or pressing a button, sends a protocol message back to the connected system.</p>
           </div>
         </div>
       </div>
